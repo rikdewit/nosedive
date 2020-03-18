@@ -1,0 +1,42 @@
+
+/* 
+svg:hover{
+    fill: rgb(245,105,249);
+    transform: scale(1.2);
+    opacity: 100%;
+    stroke-width: 0.2px;
+    
+} */
+
+.star{
+    opacity: 50%;
+    fill: rgb(222,182,203);
+    stroke: rgb(207,174,189);
+    stroke-width: 1px;
+    padding: .7rem;
+    
+}
+
+svg{
+    filter: drop-shadow(2px 2px 2px gray);
+}
+
+.star.selecting{
+    opacity: 100%;
+    fill: rgba(235, 137, 238);
+    transform: scale(1.13);
+    stroke-width: .8px;
+}
+
+body{
+    padding:3rem;
+    background-color: rgb(254,203,193);
+}
+
+.row-container {
+    display: inline-grid;
+    /* column-gap: 1rem; */
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
