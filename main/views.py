@@ -28,6 +28,8 @@ class UserListView(TemplateView):
         else:
             print(form.data)
             print("invalid form")
+
+        
         #rated_user = User.objects.get(username=request.user.username)
         #given_rating = form.data['rating']
         #current_rating = rated_user.profile.rating

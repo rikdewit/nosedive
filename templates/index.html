@@ -16,6 +16,7 @@
 {% endif %}
 <ul>
     {%for person in users%}
+    {% if person != user %}
     <li>
         <p>
             <h3 class="no-selection">{{person}} {{person.profile.rating}} </h3>
@@ -43,7 +44,8 @@
 
         </p>
     </li>
-    {%endfor%}
+    {% endif %}
+    {% endfor %}
 
 
     {% endblock %}
