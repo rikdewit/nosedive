@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-<link rel="stylesheet" href="jquery.rateyo.css"/>
 {% load static %}
 {% block title %}Home{% endblock %}
 
@@ -37,7 +32,42 @@
 -->
         <input type="submit" value="Submit">
         </form>
+        
         </p>
     </li>
 {%endfor%}
+
+<div class="star-row" role="rater" data-value="0">
+            
+  <div class="star" data-value="0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
+          <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+      </svg>
+  </div>
+  
+  <div class="star" data-value="1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
+          <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+      </svg>
+  </div>
+
+  <div class="star" data-value="2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
+          <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+      </svg>
+  </div>
+
+  <div class="star" data-value="3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
+          <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+      </svg>
+  </div>
+
+  <div class="star" data-value="4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
+          <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+      </svg>
+  </div>
+</div>
+
 {% endblock %}
