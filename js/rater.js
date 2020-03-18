@@ -14,7 +14,6 @@ export function Rater(ratingElement) {
 
             console.log(event.type)
             console.log("star" + String(i))
-            console.log(selected)
 
         });
         star.addEventListener("mouseleave", function (event) {
@@ -22,6 +21,12 @@ export function Rater(ratingElement) {
             for (let j = 0; j < stars.length; j++) {
                 stars[j].classList.remove("selecting")
             }
+        });
+
+
+        star.addEventListener("click", function (event) {
+
+            console.log("click"+stars[i].parentNode.getAttribute("data-value")+stars[i].getAttribute("data-value"));
         });
     }
 
