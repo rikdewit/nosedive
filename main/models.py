@@ -6,6 +6,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     rating = models.FloatField(default=3)
+    times_rated = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user.username
