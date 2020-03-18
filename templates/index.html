@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+<link rel="stylesheet" href="jquery.rateyo.css"/>
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  <h2>Hi {{ user.username }}!</h2>
+  <h2>Rating: {{user.profile.rating}}</h2>
+{% else %}
+  <p>You are not logged in</p>
+{% endif %}
+{%for person in users%}
+    <li>
+        <p>
+        {{person}}
+        {{person.profile.rating}} <!--
+        <form action="/main/rate" method="post">
+            {%csrf_token%}
+            <label for="rating">Rating </label>
+            <input id="user" type="hidden" name="username" value="{{person.username}}"]>
+            <input id="rating-input" type="number" name="rating" value="{{ person.profile.rating }}">
+            <input type="submit" value="OK">
+        </form>
+        -->
+        <form action ="/main/" method="post">
+            {% csrf_token %}
+            {{form}}
+        <!-- 
+<input type="hidden" value="{{person}}>
+-->
+        <input type="submit" value="Submit">
+        </form>
+        </p>
+    </li>
+{%endfor%}
+{% endblock %}

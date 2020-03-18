@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Nosedive{% endblock %}</title>
+</head>
+<body>
+  <main>
+      {% if user.is_authenticated %}
+	<h3>{{user.username}}
+	<a href="{% url 'logout' %}">logout</a>
+      {%else%}
+        <a href="{% url 'login' %}">login</a> 
+      {%endif%}
+	<a href="/admin">admin</a>       
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
+
