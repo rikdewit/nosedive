@@ -63,6 +63,13 @@ form.hidden{
     display:none;
 }
 
+
+li{
+    list-style-type:none;
+}
+
+
+
 * {
     user-select: none; /* standard syntax */
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
@@ -70,3 +77,4 @@ form.hidden{
     -khtml-user-select: none; /* webkit (konqueror) browsers */
     -ms-user-select: none; /* IE10+ */
 }
+
