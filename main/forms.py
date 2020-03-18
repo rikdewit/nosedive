@@ -1,4 +1,6 @@
 from django import forms
 
 class StarsForm(forms.Form):
-    stars = forms.IntegerField(widget = forms.NumberInput(),label = "Stars")
+    rated_user = forms.CharField(required=True)
+    stars = forms.IntegerField(required=True)
+

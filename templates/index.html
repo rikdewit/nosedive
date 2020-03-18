@@ -9,40 +9,41 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-  <h2>Hi {{ user.username }}!</h2>
-  <h2>Rating: {{user.profile.rating}}</h2>
+<h2>Hi {{ user.username }}!</h2>
+<h2>Rating: {{user.profile.rating}}</h2>
 {% else %}
-  <p>You are not logged in</p>
+<p>You are not logged in</p>
 {% endif %}
 <ul>
-{%for person in users%}
+    {%for person in users%}
     <li>
         <p>
-        <h3 class="no-selection">{{person}} {{person.profile.rating}} </h3>
-        
+            <h3 class="no-selection">{{person}} {{person.profile.rating}} </h3>
 
-        <div class="star-row" role="rater" data-value="{{person}}">
-          {% for i in '01234'|make_list %}
-          <div class="star" data-value="{{ i }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
-                <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
-            </svg>
-        </div>
-        {% endfor %}
-        </div>
-        <!-- <form action ="/main/" method="post">
-            {% csrf_token %}
-            {{form}}
-        
-<input type="hidden" value="{{person}}>
 
-        <input type="submit" value="Submit">
-        </form> -->
+            <div class="star-row" role="rater" rated_user="{{person}}">
+
+                {% for i in '01234'|make_list %}
+
+
+
+                <div class="star" data-value="{{ i }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 51 48">
+                        <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+                    </svg>
+                </div>
+                {% endfor %}
+                <form class="hidden" action="/main/" method="post">
+                    {% csrf_token %}
+                    {{form}}
+                </form>
+
+            </div>
 
 
         </p>
     </li>
-{%endfor%}
+    {%endfor%}
 
 
-{% endblock %}
+    {% endblock %}

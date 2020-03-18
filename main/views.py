@@ -20,7 +20,7 @@ class UserListView(TemplateView):
 
 
     def post(self,request, **kwargs):
-        form = StarsForm(self.request.POST)#
+        form = StarsForm(self.request.POST)
         print(form.data)
         if form.is_valid():
             print("form redirect!")

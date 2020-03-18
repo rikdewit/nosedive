@@ -27,7 +27,7 @@ svg{
 .star.selecting{
     opacity: 100%;
     fill: rgba(235, 137, 238);
-    transform: scale(1.13);
+    transform: scale(1.2);
     stroke-width: .04rem;
 }
 
@@ -37,8 +37,14 @@ svg{
 }
 
 body{
-    padding:3rem;
-    background-color: rgb(254,203,193);
+    padding: 3rem;
+    background: linear-gradient(0deg, rgba(255,211,202,1) 0%,rgb(252, 182, 170) 100% );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer{
+    display: none;
 }
 
 .star-row {
@@ -50,7 +56,11 @@ body{
 
 
 html{
+    height: 100%;
+}
 
+form.hidden{
+    display:none;
 }
 
 * {
