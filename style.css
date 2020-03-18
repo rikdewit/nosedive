@@ -12,20 +12,23 @@ svg:hover{
     opacity: 50%;
     fill: rgb(222,182,203);
     stroke: rgb(207,174,189);
-    stroke-width: 1px;
+    stroke-width: .06rem;
     padding: .7rem;
     
 }
 
 svg{
-    filter: drop-shadow(2px 2px 2px gray);
+    filter: drop-shadow(.2rem .2rem .2rem gray);
+    height:5rem;
+    width:5rem;
+
 }
 
 .star.selecting{
     opacity: 100%;
     fill: rgba(235, 137, 238);
     transform: scale(1.13);
-    stroke-width: .8px;
+    stroke-width: .04rem;
 }
 
 body{
@@ -37,4 +40,8 @@ body{
     display: inline-grid;
     /* column-gap: 1rem; */
     grid-template-columns: repeat(5, 1fr);
+}
+
+html{
+    font-size:20px;
 }
