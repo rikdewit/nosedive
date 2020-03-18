@@ -5,4 +5,6 @@ document.addEventListener('DOMContentLoaded', function(){
     raters.forEach(rater => {
         new Rater(rater);
     })
+
 })
+
