@@ -2,21 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Nosedive{% endblock %}</title>
+  <title>{% block title %}{% endblock %}</title>
   {% load static %}
   <script src="{% static 'js/main.js' %}" type="module" defer></script>
 <link rel="stylesheet" href="{% static 'css/style.css'%}">
   
 {% if user.is_authenticated %}
-{{user.username}}
-<a href="{% url 'logout' %}">logout</a>
+<a class="button user">{{user.username}}</a>
+<a class="button" href="{% url 'logout' %}">logout</a>
     {%else%}
-      <a href="{% url 'login' %}">login</a>
+      <a class="button" href="{% url 'login' %}">login</a>
     {%endif%}
-<a href="/admin">admin</a>   
-<a href="/">Homepage</a>
-<a href="mailto:rikdewit1997@gmail.com?subject Nosedive User:{{user}}">Give feedback!</a>
-<a href="https://github.com/rikkib1997/nosedive">Github</a>    
+<a class="button" href="/admin">admin</a>   
+<a class="button" href="/">Homepage</a>
+<a class="button" href="mailto:rikdewit1997@gmail.com?subject Nosedive User:{{user}}">Give feedback!</a>
+<a class="button" href="https://github.com/rikkib1997/nosedive">Github</a>    
+<a class="button" href="https://www.imdb.com/video/vi1168489753?playlistId=tt5497778&ref_=tt_ov_vi">Where did this idea come from?</a> 
+<a class="header-button" href="/"><h1>Nosedive</h1></a>
   {% block content %}
   {% endblock %}
 
