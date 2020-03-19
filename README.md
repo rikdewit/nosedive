@@ -1,5 +1,11 @@
 # Nosedive
 
+
+This is a website where you can rate each other using a star system.
+The idea came from an episode fo Black Mirror called "Nosedive".
+
+
+
 ## Install instructions
 
 You should have python3 installed.
