@@ -14,7 +14,7 @@ class UserListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         form = StarsForm()
-        users = User.objects.all().exclude(username="admin")
+        users = User.objects.all().exclude(username="admin").order_by("-profile__rating")
         context['users'] = users
         context['form'] = form
         return context
