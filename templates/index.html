@@ -34,7 +34,7 @@
                     </svg>
                 </div>
                 {% endfor %}
-                <form class="hidden" action="/main/" method="post">
+                <form class="hidden" action="{% url 'index' %}" method="post">
                     {% csrf_token %}
                     {{form}}
                 </form>

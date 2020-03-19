@@ -5,6 +5,7 @@ from django.views.generic import TemplateView, View
 from main.models import Profile
 from django.contrib.auth.models import User
 from main.forms import StarsForm
+import math
 
 class UserListView(TemplateView):
 
@@ -37,11 +38,11 @@ class UserListView(TemplateView):
         times_rated = rated_user.profile.times_rated
 
         my_rating = request.user.profile.rating
-        new_rating = current_rating-(my_rating/5)*(current_rating - given_rating)*(1/(times_rated+1))
+        new_rating = current_rating-((my_rating/5)*(current_rating - given_rating)*(1/(times_rated+1)))
         rated_user.profile.rating = new_rating
         rated_user.profile.times_rated += 1
         rated_user.save()
-        return redirect('/main/')
+        return redirect('/')
 
 class RateView(View):
     pass    
