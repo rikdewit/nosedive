@@ -14,7 +14,7 @@ class UserListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         form = StarsForm()
-        users = User.objects.all()
+        users = User.objects.all().exclude(username="admin")
         context['users'] = users
         context['form'] = form
         return context
@@ -32,16 +32,20 @@ class UserListView(TemplateView):
         rated_user = User.objects.get(username=data['rated_user'])
         given_rating = float(data['stars'])
 
-        print(rated_user)
-        current_rating = rated_user.profile.rating
-        print(current_rating)
-        times_rated = rated_user.profile.times_rated
+        if rated_user.username != 'admin':
+            print(rated_user)
+            current_rating = rated_user.profile.rating
+            print(current_rating)
+            times_rated = rated_user.profile.times_rated
 
-        my_rating = request.user.profile.rating
-        new_rating = current_rating-((my_rating/5)*(current_rating - given_rating)*(1/(times_rated+1)))
-        rated_user.profile.rating = new_rating
-        rated_user.profile.times_rated += 1
-        rated_user.save()
+            my_rating = request.user.profile.rating
+            new_rating = current_rating-((my_rating/5)*(current_rating - given_rating)*(1/(times_rated+1)))
+            rated_user.profile.rating = new_rating
+            rated_user.profile.times_rated += 1
+            rated_user.save()
+        else:
+            print(request.user,'can\'t rate admin!')
+
         return redirect('/')
 
 class RateView(View):
