@@ -32,6 +32,9 @@ class UserListView(TemplateView):
         rated_user = User.objects.get(username=data['rated_user'])
         given_rating = float(data['stars'])
 
+        if not request.user.is_authenticated:
+            return redirect("accounts/login")
+
         if rated_user.username != 'admin':
             print(rated_user)
             current_rating = rated_user.profile.rating
