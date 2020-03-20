@@ -10,7 +10,7 @@
 
 {% if user.is_authenticated %}
 <h2>Hi {{ user.username }}!</h2>
-<h2>Rating: {{user.profile.rating}}</h2>
+<h2>Rating: {{user.profile.rating|floatformat:1}}</h2>
 {% else %}
 <h3>You are not logged in</h3>
 {% endif %}
@@ -20,7 +20,7 @@
     {% if person != user and person != "admin" %}
     <li>
         <p>
-            <h3 class="no-selection">{{person}} {{person.profile.rating}} </h3>
+            <h3 class="no-selection">{{person}} {{person.profile.rating|floatformat:1}} </h3>
 
 
             <div class="star-row" role="rater" rated_user="{{person}}">
